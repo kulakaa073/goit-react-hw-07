@@ -1,5 +1,5 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './operations';
+import { fetchContacts, addContact, deleteContact } from './contactsOps';
 import { selectNameFilter } from './filtersSlice';
 
 const handlePending = state => {
@@ -18,6 +18,11 @@ const slice = createSlice({
     isLoading: false,
     error: null,
   },
+
+  // Can use like this too:
+  // extraReducers: {
+  //    [fetchContacts.fulfilled]: (state, action) => { ... }
+  // }
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.pending, handlePending)

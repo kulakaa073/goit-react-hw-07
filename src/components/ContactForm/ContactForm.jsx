@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { formatPhoneNumber, normalizePhoneNumber } from '../../utils.js';
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/operations.js';
+import { addContact } from '../../redux/contactsOps.js';
 
 import css from './ContactForm.module.css';
 

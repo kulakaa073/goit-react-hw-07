@@ -6,7 +6,7 @@ import ContactList from './components/ContactList/ContactList';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { selectError, selectIsLoading } from './redux/contactsSlice.js';
-import { fetchContacts } from './redux/operations.js';
+import { fetchContacts } from './redux/contactsOps.js';
 
 function App() {
   const dispatch = useDispatch();
