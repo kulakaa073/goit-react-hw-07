@@ -3,11 +3,11 @@ import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
 import {
   selectIsLoading,
-  selectVisibleContacts,
+  selectFilteredContacts,
 } from '../../redux/contactsSlice';
 
 export default function ContactList() {
-  const filteredcontacts = useSelector(selectVisibleContacts);
+  const filteredcontacts = useSelector(selectFilteredContacts);
 
   return (
     <ul className={css.container}>
