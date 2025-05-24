@@ -23,6 +23,7 @@ function App() {
       <ContactForm />
       <SearchBox />
       {isLoading && !error && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       <ContactList />
     </div>
   );

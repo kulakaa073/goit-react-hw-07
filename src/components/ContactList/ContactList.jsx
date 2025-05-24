@@ -1,14 +1,19 @@
 import Contact from '../Contact/Contact';
 import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
-import { selectVisibleContacts } from '../../redux/contactsSlice';
+import {
+  selectIsLoading,
+  selectVisibleContacts,
+} from '../../redux/contactsSlice';
 
 export default function ContactList() {
   const filteredcontacts = useSelector(selectVisibleContacts);
 
   return (
     <ul className={css.container}>
-      {filteredcontacts.length === 0 && <li>No contacts found.</li>}
+      {!selectIsLoading && filteredcontacts.length === 0 && (
+        <li>No contacts found.</li>
+      )}
       {filteredcontacts.map(contact => (
         <li key={contact.id}>
           <Contact contact={contact} />
